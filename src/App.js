@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState } from "react";
+import { Button, Table } from "react-bootstrap";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React test
-        </a>
-      </header>
-    </div>
-  );
+  let grades = [
+    {name: 'John', age: 8, gender: 'M'},
+    {name: 'Sarah', age: 12, gender: 'F'},
+    {name: 'Bob', age: 16, gender: 'M'},
+    {name: 'Johnny', age: 2, gender: 'M'},
+    {name: 'Ethan', age: 4, gender: 'M'},
+    {name: 'Paula', age: 18, gender: 'F'},
+    {name: 'Donald', age: 5, gender: 'M'},
+    {name: 'Jennifer', age: 13, gender: 'F'},
+    {name: 'Courtney', age: 15, gender: 'F'}, 
+    {name: 'Jane', age: 9, gender: 'F'}
+  ]
+  const [status, setStatus]=useState(true)
+  return(
+    <div className="container">
+      <Button onClick={()=>setStatus(true)} variant="success" style={{marginRight:"20px"}}>Show</Button>
+      <Button onClick={()=>setStatus(false)} variant="warning">Hide</Button>
+      
+      {status ? <Table striped bordered hover>
+        <thead>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+        </thead>
+        <tbody>
+            {
+            grades.map((items)=>{
+              return(
+                <tr>
+                  <td>{items.name}</td>
+                  <td>{items.age}</td>
+                  <td>{items.gender}</td>
+                </tr>
+                
+              )
+            })
+          }
+        </tbody>
+      </Table> : ""
 }
-
+      
+    </div>
+  )
+}
 export default App;
+
