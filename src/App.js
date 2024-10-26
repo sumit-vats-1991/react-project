@@ -15,11 +15,13 @@ function App() {
   ]
   const [status, setStatus]=useState(true)
   return(
-    <div className="container">
+    <div className="container mt-3">
       <Button onClick={()=>setStatus(true)} variant="success" style={{marginRight:"20px"}}>Show</Button>
       <Button onClick={()=>setStatus(false)} variant="warning">Hide</Button>
+      <br></br>
+      <br></br>
       
-      {status ? <Table striped bordered hover>
+      {status ? <Table striped bordered hover border={1}>
         <thead>
           <th>Name</th>
           <th>Age</th>
@@ -39,7 +41,9 @@ function App() {
             })
           }
         </tbody>
-      </Table> : ""
+      </Table> : <div className="text-center">
+        <h1>Table Hide.</h1>
+      </div>
 }
       
     </div>
