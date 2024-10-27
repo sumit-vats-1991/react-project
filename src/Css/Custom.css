@@ -1,0 +1,23 @@
+body{
+    background-color: lightgray !important;
+}
+.bodyBackground{
+    position: relative;
+    background-color: white;
+    height: 800px;
+    border-radius: 20px;
+    padding: 0px !important;
+}
+.navbar-nav a{
+    margin-right: 20px;
+    color: white;
+    text-decoration: none;
+  }
+.rightSideBar{
+    position: absolute;
+    right: 0px;
+    top: 40px;
+    background-color: antiquewhite;
+    height: 500px;
+    padding: 0px 51px 0px 0px;
+}
