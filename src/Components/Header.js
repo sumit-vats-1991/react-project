@@ -8,7 +8,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap'
 // import RightSideBar from './RightSideBar'
 import AxiosExample from './AxiosExample'
 import FetchExample from './FetchExample'
-
+import ContextApi from './ContextApi'
 
 
 export default function Header(props) {
@@ -23,6 +23,7 @@ export default function Header(props) {
             <Link to="/contact">Contact</Link>
             <Link to="/axios">Axios</Link>
             <Link to="/fetch">Fetch</Link>
+            <Link to="/context">Context</Link>
           </Nav>
         </Container>
       </Navbar>
@@ -32,6 +33,7 @@ export default function Header(props) {
         <Route path="/contact"  element={<Contact /> } />
         <Route path="/axios"  element={<AxiosExample /> } />
         <Route path="/fetch"  element={<FetchExample /> } />
+        <Route path="/context"  element={<ContextApi /> } />
       </Routes>
     </Router>
     {/* <RightSideBar></RightSideBar> */}
